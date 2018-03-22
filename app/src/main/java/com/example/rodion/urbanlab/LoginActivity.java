@@ -17,9 +17,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 
 public class LoginActivity extends AppCompatActivity {
+
+    private com.facebook.login.widget.LoginButton loginButton;
     //Пример с сайта google android dev
     private static final String TAG = "LoginActivity";
     private static final String URL_FOR_LOGIN = "https://XXX.XXX.X.XX/android_login_example/login.php";
@@ -33,6 +39,18 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+        FragmentManager fm = getSupportFragmentManager();
+       /* Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+        if (fragment == null) {
+            fragment = new FacebookFragment();
+            fm.beginTransaction()
+                    .add(R.id.fragment_container, fragment)
+                    .commit();
+        }*/
+
 
         loginInputEmail = (EditText) findViewById(R.id.login_input_email);
         loginInputPassword = (EditText) findViewById(R.id.login_input_password);
