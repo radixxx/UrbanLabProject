@@ -47,13 +47,12 @@ import java.util.Arrays;
 
 public class FacebookFragment extends Fragment{
 
-    private LoginButton loginButton;
+    public LoginButton loginButton;
     private Button getUserInterests;
     private boolean postingEnabled = false;
 
     private static final String PERMISSION = "publish_actions";
-    private final String PENDING_ACTION_BUNDLE_KEY =
-            "com.example.hellofacebook:PendingAction";
+    private final String PENDING_ACTION_BUNDLE_KEY = "com.example.hellofacebook:PendingAction";
 
     private Button postStatusUpdateButton;
     private Button postPhotoButton;
@@ -262,7 +261,6 @@ public class FacebookFragment extends Fragment{
         // Can we present the share dialog for photos?
         canPresentShareDialogWithPhotos = ShareDialog.canShow(
                 SharePhotoContent.class);
-
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

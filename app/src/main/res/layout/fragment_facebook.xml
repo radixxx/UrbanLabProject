@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.rodion.urbanlab.FacebookFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:facebook="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="#FFF">
+    android:background="#FFF"
+    android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        facebook:layout_constraintLeft_toLeftOf="parent"
+        facebook:layout_constraintRight_toRightOf="parent"
+        facebook:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/profilePicture"
-            android:layout_height="100dp"
             android:layout_width="100dp"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="10dp" />
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/loginButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:textColor="#333"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
             facebook:com_facebook_confirm_logout="true"
-            facebook:com_facebook_tooltip_mode="never_display"/>
+            facebook:com_facebook_tooltip_mode="never_display" />
 
 
         <Button
@@ -45,16 +51,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:visibility="visible"
-            android:text="@string/postStatusUpdateButton" />
+            android:text="@string/postStatusUpdateButton"
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/postPhotoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
-            android:visibility="visible"
-            android:text="@string/postStatusUpdateButton"/>
+            android:text="@string/postStatusUpdateButton"
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/getInterestsButton"
