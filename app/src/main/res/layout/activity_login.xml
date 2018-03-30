@@ -55,12 +55,6 @@
             android:layout_marginTop="300dp"
             android:textColor="@android:color/holo_red_dark" />
 
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="350dp" />
 
 
     </RelativeLayout>
