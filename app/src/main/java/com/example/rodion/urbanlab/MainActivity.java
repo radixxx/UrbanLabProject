@@ -3,9 +3,8 @@ package com.example.rodion.urbanlab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,10 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Button login;
 
@@ -28,14 +28,18 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,10 +51,23 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+
+        //create btn for google maps on new activity
+        Button btnmap = (Button) findViewById(R.id.btnmap);
+        btnmap.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                //Start NewActivity.class
+                Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+
         //create btn for autorisation on new activity
         // Locate the button in activity_main.xml
         login = (Button) findViewById(R.id.btnLogin);
-
         // Capture button clicks
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -60,9 +77,21 @@ public class MainActivity extends AppCompatActivity
                         LoginActivity.class);
                 startActivity(myIntent);
             }
+
         });
 
     }
+
+
+   /* public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnmap:
+                // TODO Call second activity
+                break;
+            default:
+                break;
+        }*/
+
 
     @Override
     public void onBackPressed() {
@@ -119,5 +148,16 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
